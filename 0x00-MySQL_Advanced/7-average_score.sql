@@ -2,7 +2,7 @@
 
 DELIMITER //
 
-CREATE PROCEDURE ComputeAverageScoreForUser(IN user_id INT, OUT sc INT, OUT pr INT)
+CREATE PROCEDURE ComputeAverageScoreForUser(IN user_id INT)
 BEGIN
 	DECLARE total_score INT;
 	DECLARE total_projects INT;
