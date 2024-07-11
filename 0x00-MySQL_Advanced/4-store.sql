@@ -1,3 +1,4 @@
+-- trigger that decreases quantity attribute for an item in table items whenever a new row with the item is inserted into table order
 DELIMITER $$
 CREATE TRIGGER update_quantity
 AFTER INSERT ON orders
