@@ -18,3 +18,7 @@ def insert_school(mongo_collection, **kwargs):
     """
     mongo_collection.insert_one(kwargs)
     return mongo_collection.insert_id
+
+
+if __name__ == "__main__":
+    pass
