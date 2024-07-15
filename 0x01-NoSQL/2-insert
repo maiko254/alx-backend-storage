@@ -1,0 +1,5 @@
+// script that inserts a document into the collection school
+const db_name = process.argv[2]
+const client = new Mongo().getDB(db_name)
+
+client.school.insertOne({ name: "Holberton school" })
