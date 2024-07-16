@@ -9,10 +9,13 @@ if __name__ == "__main__":
     coll = db.nginx
 
     print(f"{coll.count_documents({})} logs \nMethods:")
-    print(f"    method GET: {coll.count_documents({'method': 'GET'})}")
-    print(f"    method POST: {coll.count_documents({'method': 'POST'})}")
-    print(f"    method PUT: {coll.count_documents({'method': 'PUT'})}")
-    print(f"    method PATCH: {coll.count_documents({'method': 'PATCH'})}")
-    print(f"    method DELETE: {coll.count_documents({'method': 'DELETE'})}")
+
+    methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
+
+    for method in methods:
+        count = len(list(coll.find({'method': method})))
+        print(f"\tmethod {method}: {count}")
+
     filter = {'method': 'GET', 'path': '/status'}
-    print(f"{coll.count_documents(filter)} status check")
+    status_check_count = len(list(coll.find(filter)))
+    print(f"{status_check_count} status check")
