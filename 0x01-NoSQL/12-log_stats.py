@@ -8,7 +8,8 @@ if __name__ == "__main__":
     db = client.logs
     coll = db.nginx
 
-    print(f"{coll.count_documents({})} logs \nMethods:")
+    print(f"{coll.count_documents({})} logs")
+    print("Methods:")
 
     methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
 
